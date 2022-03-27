@@ -1,0 +1,157 @@
+<div id="body-pd">
+    <app-navbar [title]="heading"></app-navbar>
+    <div class="l-navbar" id="nav-bar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100">
+  
+      <!-- invite section begins -->
+      <div class="d-flex flex-row title-row">
+        <div class="d-flex flex-column">
+          <h4 class="main-title">GSE Banking App</h4>
+          <div class="d-flex flex-row align-items-center">
+            <span *ngIf="total_percentage < 100" class="fade-color">{{total_percentage}}%</span>
+            <span *ngIf="total_percentage >= 100" class="fade-color">100%</span>
+            <mat-progress-bar id="prgBar" mode="determinate" value={{total_percentage}}></mat-progress-bar>
+          </div>
+        </div>
+        <div class="d-flex flex-row">
+          <div class="invite">
+            <i class='bx bx-plus'></i>
+            <p class="">Invite</p>
+          </div>
+        </div>
+      </div>
+      <!-- invite section ends -->
+  
+      <!-- calendar section begins -->
+      <div class="d-flex flex-row title-row mt-5 align-items-center">
+        <div class="d-flex flex-row align-items-center">
+          <p class="cal-month">{{currentMonth}} &nbsp;{{currentYear}}</p>
+          <i class='bx bx-chevron-left nav_icon'></i>
+          <i class='bx bx-chevron-right nav_icon' ></i>
+        </div>
+        <div class="d-flex flex-row align-items-center">
+          <i class='bx bx-search search_icon'></i>
+          <select name="" id="frame-select">
+            <option value="DAY">Day</option>
+            <option value="WEEK">Week</option>
+            <option selected value="MONTH">Month</option>
+          </select>
+          <span class="select-arrow"><i class='bx bx-chevron-down select_icon'></i></span>
+        </div>
+  
+      </div>
+      <div class="d-flex fex-row mt-3 mb-3 cal_days align-items-center">
+        <!-- <a href="" class="date_item active_date"> <span class="day_span">S</span>&nbsp;20</a> -->
+        <a class="date_item" *ngFor="let days of allDays" [ngClass]="{'active_date': days.date == currentDate }"> 
+            <span class="day_span">{{days.day}}</span>&nbsp;{{days.date}}
+        </a>
+      </div>
+      <!-- calendar section ends -->
+  
+      <!-- task section begins -->
+      <div class="d-flex flex-row custom_buttom align-items-center" *ngFor="let staff of allStaff">
+        <div class="d-flex flex-row user-task">
+          <img class="header_img" src="{{staff.pic}}" alt="">
+          <div class="d-flex flex-column">
+              <p class="user">{{staff.fullname}}</p>
+              <p class="email">{{staff.role}}</p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <i class='bx bx-dots-vertical-rounded nav_icon'></i>
+          </div>
+        </div>
+        <div class="relative_class">
+          <mat-progress-bar id="{{tasks[staff.id!].taskId}}" [style.width.px]="tasks[staff.id!].width"  mode="determinate" value={{tasks[staff.id!].progressLevel}}></mat-progress-bar>
+          <span *ngIf="tasks[staff.id!].progressLevel < 100" class="task_percent">{{tasks[staff.id!].progressLevel}}%</span>
+          <span *ngIf="tasks[staff.id!].progressLevel >= 100" class="task_percent override_color">100%</span>
+          <span class="task_name">{{tasks[staff.id!].name}}</span>
+        </div>
+      </div>
+      <!-- [style.width.px]="tasks[staff.id!].width" -->
+      <!-- <div class="d-flex flex-row custom_buttom align-items-center">
+        <div class="d-flex flex-row user-task">
+          <img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="">
+          <div class="d-flex flex-column">
+              <p class="user">Finna A.</p>
+              <p class="email">UX Designer</p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <i class='bx bx-dots-vertical-rounded nav_icon'></i>
+          </div>
+        </div>
+        <div class="relative_class">
+          <mat-progress-bar id="task_2"  mode="determinate" value=100></mat-progress-bar>
+          <span class="task_percent">100%</span>
+        </div>
+      </div>
+      <div class="d-flex flex-row custom_buttom align-items-center">
+        <div class="d-flex flex-row user-task">
+          <img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="">
+          <div class="d-flex flex-column">
+              <p class="user">Finna A.</p>
+              <p class="email">UX Designer</p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <i class='bx bx-dots-vertical-rounded nav_icon'></i>
+          </div>
+        </div>
+        <div class="relative_class">
+          <mat-progress-bar id="task_3"  mode="determinate" value=32></mat-progress-bar>
+          <span class="task_percent">32%</span>
+        </div>
+      </div>
+      <div class="d-flex flex-row custom_buttom align-items-center">
+        <div class="d-flex flex-row user-task">
+          <img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="">
+          <div class="d-flex flex-column">
+              <p class="user">Finna A.</p>
+              <p class="email">UX Designer</p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <i class='bx bx-dots-vertical-rounded nav_icon'></i>
+          </div>
+        </div>
+        <div class="relative_class">
+          <mat-progress-bar id="task_4"  mode="determinate" value=32></mat-progress-bar>
+          <span class="task_percent">32%</span>
+        </div>
+      </div>
+      <div class="d-flex flex-row custom_buttom align-items-center">
+        <div class="d-flex flex-row user-task">
+          <img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="">
+          <div class="d-flex flex-column">
+              <p class="user">Finna A.</p>
+              <p class="email">UX Designer</p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <i class='bx bx-dots-vertical-rounded nav_icon'></i>
+          </div>
+        </div>
+        <div class="relative_class">
+          <mat-progress-bar id="task_5"  mode="determinate" value=77></mat-progress-bar>
+          <span class="task_percent">77%</span>
+        </div>
+      </div>
+      <div class="d-flex flex-row custom_buttom align-items-center">
+        <div class="d-flex flex-row user-task">
+          <img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="">
+          <div class="d-flex flex-column">
+              <p class="user">Finna A.</p>
+              <p class="email">UX Designer</p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <i class='bx bx-dots-vertical-rounded nav_icon'></i>
+          </div>
+        </div>
+        <div class="relative_class">
+          <mat-progress-bar id="task_1"  mode="determinate" value=68></mat-progress-bar>
+          <span class="task_percent">68%</span>
+        </div>
+      </div> -->
+      <!-- task section begins -->
+    </div>
+    <!--Container Main end-->
+</div>

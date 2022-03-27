@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #FCFCFC;
+    --first-color-light: #AFA5D9;
+    --white-color: #F7F6FB;
+    --grey-001: #C1C1C1;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 0.9rem;
+    --z-fixed: 100;
+    --side-link: #14142B;
+    --hover-link: #4723D9;
+    --active-link: #1B5AFD;
+    --user-email: 0.7rem;
+    --user-role: 0.8rem;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

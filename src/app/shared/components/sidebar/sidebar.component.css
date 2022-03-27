@@ -1,0 +1,143 @@
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem;
+    cursor: pointer;
+}
+
+.nav_logo {
+    margin-bottom: 1.5rem
+}
+
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color);
+}
+
+.nav_logo-name {
+    color: var(--side-link);
+    font-weight: 700;
+    margin-right: 50px;
+}
+
+.nav_link {
+    position: relative;
+    color: var(--side-link);
+    /* margin-bottom: 1.5rem; */
+    transition: .3s;
+    font-weight: 600;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    margin-bottom: 15px;
+}
+
+.nav_link:hover {
+    color: var(--hover-link)
+}
+
+.nav_icon {
+    font-size: 1.25rem;
+}
+
+.plus_icon {
+    font-size: 2rem;
+}
+
+.plus_icon::before {
+    color: var(--active-link);
+}
+
+.active {
+    color: var(--active-link)
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+a {
+    text-decoration: none
+}
+
+.cirle-border {
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    background-color: var(--active-link);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header_toggle {
+    font-size: 1.5rem;
+    cursor: pointer
+}
+
+.bx-x:before {
+    content: '' !important;
+}
+
+.create-new {
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 12px;
+    background: #EDF1FB;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.new-task-p{
+    height: 35px;
+    margin-right: 12px;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.custom-user {
+    margin-left: 20px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.user {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    height: 7px;
+}
+
+.email {
+    font-family: var(--body-font);
+    font-size: var(--user-email);
+}

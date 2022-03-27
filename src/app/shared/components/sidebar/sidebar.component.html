@@ -1,0 +1,29 @@
+<nav class="nav">
+    <div> 
+        <a class="nav_logo"> 
+            <span class="cirle-border" onclick="toggleSidebar()"><i class='bx bx-layer nav_logo-icon'></i></span>  
+            <span class="nav_logo-name">PJ</span>
+            <a class="nav_link" onclick="toggleSidebar()"> <i class='bx bx-log-out nav_icon'></i></a>
+        </a>
+        <div class="nav_list"> 
+            <a [routerLink]="['/']" [queryParams]="{ heading: 'Dashboard' }" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
+            <a [routerLink]="['/']" [queryParams]="{ heading: 'Analytics' }" class="nav_link"> <i class='bx bx-signal-4 nav_icon'></i> <span class="nav_name">Analytics</span> </a> 
+            <a [routerLink]="['/']" [queryParams]="{ heading: 'Projects' }" class="nav_link"> <i class='bx bxs-folder nav_icon'></i> <span class="nav_name">Projects</span> </a> 
+            <a [routerLink]="['/']" [queryParams]="{ heading: 'Tracking' }" class="nav_link"> <i class='bx bxs-stopwatch nav_icon'></i> <span class="nav_name">Tracking</span> </a> 
+            <a [routerLink]="['/']" [queryParams]="{ heading: 'History' }" class="nav_link"> <i class='bx bx-time-five nav_icon'></i> <span class="nav_name">History</span> </a> 
+            <a [routerLink]="['/']" [queryParams]="{ heading: 'Settings' }" class="nav_link"> <i class='bx bxs-cog nav_icon'></i> <span class="nav_name">Settings</span> </a> 
+            <div id="create_new" class="d-flex d-none flex-row create-new">
+                <p class="new-task-p">Create new task</p>
+                <i class='bx bxs-plus-circle plus_icon'></i>
+            </div>
+        </div>
+        <div id="user_down" class="d-flex d-none flex-row custom-user">
+            <img class="header_img" src="https://i.imgur.com/hczKIze.jpg" alt="">
+            <div class="d-flex flex-column">
+                <p class="user">Finna A.</p>
+                <p class="email">finna@iksg.com</p>
+            </div>
+        </div>
+    </div>
+    
+</nav>
